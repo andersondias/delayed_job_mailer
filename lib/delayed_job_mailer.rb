@@ -1,5 +1,5 @@
 module Delayed
-  module AsynchMailer
+  module Mailer
     def self.included(base)
       base.class_eval do
         class << self

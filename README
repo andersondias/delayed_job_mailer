@@ -8,10 +8,10 @@ plugin (http://github.com/tobi/delayed_job).
 How it works
 ============
 
-The plugin provides a module Delayed::AsynchMail. To make a mailer use a queue simply include it into the class like this:
+The plugin provides a module Delayed::Mailer. To make a mailer use a queue simply include it into the class like this:
 
 class MyMailer < ActionMailer::Base
-  include Delayed::AsynchMail
+  include Delayed::Mailer
 end
 
 From now on all MyMailer.deliver_whatever_email calls create an entry delayed_job queue.

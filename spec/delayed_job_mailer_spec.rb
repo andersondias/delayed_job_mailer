@@ -7,7 +7,7 @@ require 'actionmailer'
 ActionMailer::Base.delivery_method = :test
 
 class AsynchTestMailer < ActionMailer::Base
-  include Delayed::AsynchMailer
+  include Delayed::Mailer
   
   def test_mail(from, to)
     @subject    = 'subject'
