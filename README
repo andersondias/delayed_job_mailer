@@ -17,6 +17,13 @@ end
 From now on all MyMailer.deliver_whatever_email calls create an entry delayed_job queue.
 If you still want to deliver mail sycnhronously add a bang to the method call: MyMailer.deliver_whatever_email!
 
+To set asynchronous mailing as project default, you need to create an initializer file as follows:
+
+# config/initializers/delayed_mailer.rb
+class ActionMailer::Base
+  include Delayed::Mailer
+end
+
 Installation
 ============
 
