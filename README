@@ -1,13 +1,23 @@
-DelayedJobMailer
+Delayed::AsynchMailer
 ==========
 
-Introduction goes here.
-
+This enables asynchronus mail delivery.
+To achieve it you need to include Delayed::AsynchMailer module in your mailers.
+Calls to Mailer.deliver_some_email will be asynchronous.
+To send an email synchrounsly call Mailer.deliver_some_email!
 
 Example
 =======
 
-Example goes here.
+class SomeMailer < ActionMailer::Base
+  include Delayed::AsynchMailer
 
+  def test_mail
+    ...
+  end
+end
+
+SomeMailer.deliver_test_mail  # Asynchronus call
+SomeMailer.deliver_test_mail! # Synchronus call
 
 Copyright (c) 2009 Anderson Dias, released under the MIT license
