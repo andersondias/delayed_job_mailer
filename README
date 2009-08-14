@@ -1,23 +1,38 @@
-Delayed::AsynchMailer
-==========
+DelayedJobMailer
+==============
 
-This enables asynchronus mail delivery.
-To achieve it you need to include Delayed::AsynchMailer module in your mailers.
-Calls to Mailer.deliver_some_email will be asynchronous.
-To send an email synchrounsly call Mailer.deliver_some_email!
+This plugin provides a module which - when included into an ActionMailer subclass - pushes all emails that would 
+normally be delivered synchronously into a queue for asynchronous processing. For queuing it relies on the delayed_job 
+plugin (http://github.com/tobi/delayed_job).
 
-Example
-=======
+How it works
+============
 
-class SomeMailer < ActionMailer::Base
-  include Delayed::AsynchMailer
+The plugin provides a module Delayed::AsynchMail. To make a mailer use a queue simply include it into the class like this:
 
-  def test_mail
-    ...
-  end
+class MyMailer < ActionMailer::Base
+  include Delayed::AsynchMail
 end
 
-SomeMailer.deliver_test_mail  # Asynchronus call
-SomeMailer.deliver_test_mail! # Synchronus call
+From now on all MyMailer.deliver_whatever_email calls create an entry delayed_job queue.
+If you still want to deliver mail sycnhronously add a bang to the method call: MyMailer.deliver_whatever_email!
+
+Installation
+============
+
+script/plugin install git://github.com/langalex/workling_mailer.git
+
+Credits
+=======
+
+This plugin is a delayed job plugin based on langalex workling_mailer
+plugin that can be found at http://github.com/langalex/workling_mailer
+
+Contact
+=======
 
 Copyright (c) 2009 Anderson Dias, released under the MIT license
+
+Email: andersondaraujo[at]gmail.com
+Twitter: extendsmymind
+Blog: http://extendsmymind.wordpress.com
