@@ -34,7 +34,7 @@ describe AsynchTestMailer do
     end
 
     it 'should send deliver action to delayed job list' do
-      AsynchTestMailer.should_receive(:send_later).with(:deliver_test_mail, *@params)
+      AsynchTestMailer.should_receive(:send_later).with('deliver_test_mail!', *@params)
       AsynchTestMailer.deliver_test_mail *@params
     end
   end
