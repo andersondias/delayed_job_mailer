@@ -1,6 +1,9 @@
+# coding: utf-8
 require 'rake'
-require 'spec/rake/spectask'
 require 'rake/rdoctask'
+
+gem 'rspec-rails', '>= 1.0.0'
+require 'spec/rake/spectask'
 
 desc 'Default: run specs.'
 task :default => :spec
@@ -27,4 +30,3 @@ Rake::RDocTask.new(:rdoc) do |rdoc|
   rdoc.rdoc_files.include('README')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
-

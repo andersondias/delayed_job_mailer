@@ -1,7 +1,8 @@
+# coding: utf-8
 require File.dirname(__FILE__) + '/spec_helper'
 
 require 'rubygems'
-gem     'actionmailer'
+gem     'actionmailer', '>= 1.0.0'
 require 'actionmailer'
 
 ActionMailer::Base.delivery_method = :test

@@ -1,10 +1,11 @@
+# coding: utf-8
+
 module Delayed
   module Mailer
     
     def self.included(base)
       base.class_eval do
         class << self
-          
           def method_missing(method_symbol, *params)
             if ::Delayed::Mailer.excluded_environments &&
               ::Delayed::Mailer.excluded_environments.include?(::RAILS_ENV.to_sym)
