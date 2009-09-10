@@ -27,7 +27,7 @@ end
 Installation
 ============
 
-script/plugin install git://github.com/andersondias/workling_mailer.git
+script/plugin install git://github.com/andersondias/delayed_job_mailer.git
 
 Configuration
 =============
