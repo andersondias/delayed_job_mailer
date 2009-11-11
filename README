@@ -3,7 +3,7 @@ DelayedJobMailer
 
 This plugin provides a module which - when included into an ActionMailer subclass - pushes all emails that would 
 normally be delivered synchronously into a queue for asynchronous processing. For queuing it relies on the delayed_job 
-plugin (http://github.com/tobi/delayed_job).
+plugin ( http://github.com/tobi/delayed_job ).
 
 How it works
 ============
