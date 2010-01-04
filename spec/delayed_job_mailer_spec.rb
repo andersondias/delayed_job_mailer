@@ -3,7 +3,7 @@ require File.dirname(__FILE__) + '/spec_helper'
 
 require 'rubygems'
 gem     'actionmailer', '>= 1.0.0'
-require 'actionmailer'
+require 'action_mailer'
 
 ActionMailer::Base.delivery_method = :test
 
